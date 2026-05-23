@@ -79,35 +79,6 @@ VST3:   UAD API 2500.vst3\               → UAD API 2500.vst3.disabled\
 
 DAW 重新扫描时,后缀不被识别为 VST,插件被自然忽略。需要恢复时反向重命名即可,完全可逆,不破坏任何文件,不修改注册表。
 
-## 编译(可选)
-
-仅当你想从源码构建时需要 Node.js。
-
-```bash
-cd uad_app
-npx @neutralinojs/neu build --embed-resources
-```
-
-产物在 `uad_app/dist/UAD插件管理器/UAD插件管理器-win_x64.exe`(已嵌入 resources,单文件)。
-
-## 项目结构
-
-```
-UAD/
-├── UAD插件管理器.exe          # 单文件发行版(运行时无需任何外部依赖)
-├── UADx_Manager_Pro.py        # UADx 原生(iLok)版本管理器(Python/Tk,可选)
-├── UADSystemProfile.txt       # 示例授权档案
-├── uad_app/                   # Neutralinojs 源码工程
-│   ├── neutralino.config.json
-│   ├── resources/
-│   │   ├── index.html
-│   │   ├── styles.css
-│   │   ├── icons/
-│   │   └── js/main.js
-│   └── bin/                   # Neutralino 6.5.0 平台运行时(构建时使用)
-└── README.md
-```
-
 ## 风险与免责声明
 
 - 本工具**仅修改文件后缀**,可完全反向恢复;不破坏 UAD 软件本身
